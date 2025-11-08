@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ登录</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f5f6f7; font-family: "Microsoft YaHei", sans-serif; }
+        .login-box { width: 400px; max-width: 90%; height: 350px; background: #fff; margin: 100px auto; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 30px; }
+        .qq-logo { text-align: center; margin-bottom: 25px; }
+        .qq-logo img { width: 80px; height: 80px; }
+        .input-group { margin-bottom: 20px; position: relative; }
+        .input-group input { width: 100%; height: 48px; padding-left: 45px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; outline: none; }
+        .input-group input:focus { border-color: #1da1f2; box-shadow: 0 0 0 2px rgba(29,161,242,0.2); }
+        .input-group i { position: absolute; left: 15px; top: 15px; font-size: 20px; color: #999; }
+        .login-btn { width: 100%; height: 48px; background: #1da1f2; border: none; border-radius: 4px; color: #fff; font-size: 18px; cursor: pointer; margin-top: 10px; transition: background 0.3s; }
+        .login-btn:hover { background: #1a91da; }
+        .options { display: flex; justify-content: space-between; margin-top: 15px; font-size: 14px; }
+        .options a { color: #1da1f2; text-decoration: none; }
+        .options a:hover { text-decoration: underline; }
+        .other-login { margin-top: 30px; text-align: center; }
+        .other-login p { color: #999; margin-bottom: 15px; }
+        .icon-list { display: flex; justify-content: center; gap: 25px; }
+        .icon-list a { width: 40px; height: 40px; border-radius: 50%; background: #eee; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.3s; }
+        .icon-list a i { font-size: 20px; color: #666; }
+        .icon-list a:hover { background: #e5e5e5; }
+    </style>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-box">
+        <!-- QQ图标 -->
+        <div class="qq-logo">
+            <img src="https://qzonestyle.gtimg.cn/qzone/v8/img/Qzone.svg" alt="QQ登录">
+        </div>
+        <!-- 输入框组 -->
+        <div class="input-group">
+            <<i class="fa-solid fa-user"></</i>
+            <input type="text" placeholder="QQ号码/手机号/邮箱" id="username">
+        </div>
+        <div class="input-group">
+            <<i class="fa-solid fa-lock"></</i>
+            <input type="password" placeholder="密码" id="password">
+        </div>
+        <!-- 登录按钮 -->
+        <button class="login-btn" onclick="login()">登录</button>
+        <!-- 辅助选项 -->
+        <div class="options">
+            <a href="#">忘记密码?</a>
+            <a href="#">注册账号</a>
+        </div>
+        <!-- 其他登录方式 -->
+        <div class="other-login">
+            <p>其他登录方式</p>
+            <div class="icon-list">
+                <a href="#"><<i class="fa-brands fa-weixin"></</i></a>
+                <a href="#"><<i class="fa-brands fa-qq"></</i></a>
+                <a href="#"><<i class="fa-brands fa-weibo"></</i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            if (!username || !password) {
+                alert('请输入账号和密码！');
+                return;
+            }
+            // 伪登录成功提示（实际项目需对接后端接口）
+            alert(`账号：${username}\n登录成功！（仅演示用）`);
+            // 可添加跳转逻辑：window.location.href = "首页地址";
+        }
+    </script>
+</body>
+</html>
